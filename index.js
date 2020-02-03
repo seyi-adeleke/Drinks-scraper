@@ -5,12 +5,13 @@ const cli = require('./lib');
 program
   .version('1.0.0')
   .option('-l, --link <required>', 'The url')
-  .parse(process.argv);
 
 program.on('--help', () => {
   console.log('')
   console.log('Examples:');
-  console.log('$ drinks --link');
+  console.log('$ drinks --link `https://www.delish.com/cooking/recipe-ideas/a30546935/shirley-temple-mimosas-recipe/` ');
 });
+
+program.parse(process.argv);
 
 cli(program);
